@@ -33,6 +33,7 @@ const config: Config = {
         docs: {
           routeBasePath: '/', // 纯 Wiki 模式：文档直接作为根路径
           sidebarPath: './sidebars.ts',
+          editUrl: 'https://github.com/binaryu/emos-wiki/tree/main/',
         },
         blog: false, // 纯 Wiki 模式下关闭博客
         theme: {
@@ -87,6 +88,11 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: '🌟',
+        },
+        {
+          href: 'https://github.com/binaryu/emos-wiki',
+          label: 'GitHub',
+          position: 'right',
         },
       ],
     },

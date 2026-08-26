@@ -25,6 +25,6 @@ slug: /register
 ### 3. 进telegram群
 需要绑定 emos 账号才能进入群聊,网站链接点击即可跳转 telegram 进行绑定
 
-![register1](https://raw.githubusercontent.com/binaryu/emos-wiki/refs/heads/main/img/register1.png)
+![register1](https://raw.githubusercontent.com/binaryu/emos-wiki/refs/heads/main/img/register2.png)
 
 或者让你的小伙伴通过 [@emospg_bot](https://t.me/emospg_bot) 发送 /invite 即可获得一个入群链接
