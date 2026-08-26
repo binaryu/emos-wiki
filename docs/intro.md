@@ -1,15 +1,19 @@
 ---
-title: emos指南
-sidebar_label: emos指南
+title: emos 指南
+sidebar_label: 指南概览
 sidebar_position: 1
 slug: /
 ---
 
-# 入门指南
-
-欢迎来到 **emos wiki ²** 本指南将介绍 emos 的各种功能 ,补充 [官方wiki](https://wiki.emos.best/) 缺少的部分
+欢迎来到 **emos wiki ²**！整理 emos 的各种功能与操作指南，补充 [官方 Wiki](https://wiki.emos.best/) 缺少细节。
 
 
-欢迎通过 Issue/PR 来提交补充
+欢迎大家通过 [GitHub Issue / PR](https://github.com/binaryu/emos-wiki) 提交补充或纠错！
 
 
+---
+
+
+- 📝 [注册指南](/register) —— Somebyte 账号注册、emos 登录与绑定 TG 群流程。
+- 🎬 [观影指南](/start) —— 服务器获取、客户端推荐与播放注意事项。
+- 🥕 [萝卜](/carrot) —— 了解 emos 的机制与规则。

@@ -31,11 +31,11 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // 纯 Wiki 模式：文档直接作为根路径
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/binaryu/emos-wiki/tree/main/',
         },
-        blog: false, // 纯 Wiki 模式下关闭博客
+        blog: false, 
         theme: {
           customCss: './src/css/custom.css',
         },
