@@ -43,7 +43,7 @@ slug: /start
 | :--- | :--- | 
 |  **Windows** | `Hills`、`RodelPlayer` |
 |  **Android** | `Hills`、`Yamby` | 
-|  **Android TV** | `Yamby`、`Chaichai (柴柴)` | 
+|  **Android TV** | `Yamby`、`Chaichai`、`Afusekt` | 
 |  **iOS** | `SenPlayer`、`Lenna`、`Eplayer X` |
 :::warning[ 注意事项]
 本服后端为**自研架构**，不同客户端可能会存在兼容性差异。如遇到特定客户端无法正常加载或串流中断，建议优先**更换上述表格中的其他推荐软件**，或联系客户端开发者进行适配。

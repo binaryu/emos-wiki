@@ -1,6 +1,6 @@
 ---
 title: 萝卜货币
-sidebar_label: 萝卜
+sidebar_label: 萝卜相关
 sidebar_position: 4
 slug: /carrot
 ---

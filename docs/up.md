@@ -1,5 +1,5 @@
 ---
-title: 资源上传
+title: 📤资源上传
 sidebar_label: 资源上传
 sidebar_position: 5
 slug: /up
