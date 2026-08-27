@@ -41,7 +41,8 @@ slug: /register
 
 进入群聊需要先绑定你的 emos 账号：
 
-- **方式 A（网页一键跳转）**：在面板页面直接点击 Telegram 绑定链接，即可自动跳转至 Bot 授权。
+- **方式 A（网页绑定）**：在面板页面直接点击 Telegram 绑定链接，即可自动跳转至 Bot 授权, 随后申请入[群](https://t.me/emospg),bot会自动通过
 - **方式 B（Bot 邀请）**：让已有权限的小伙伴通过 [@emospg_bot](https://t.me/emospg_bot) 发送指令 `/invite` 生成入群专属链接。
+- 通过方式 B 入群的, 推荐也绑定 emos 账号, 以便参与抢红包等活动
 
 ![TG绑定示意](https://raw.githubusercontent.com/binaryu/emos-wiki/refs/heads/main/img/register2.png)

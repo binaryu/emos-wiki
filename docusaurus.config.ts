@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'emos wiki ²',
   tagline: 'emos 的第三方 wiki',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   // Future flags
   future: {
@@ -98,18 +98,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Wiki',
-          items: [
-            {
-              label: '首页',
-              to: '/',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} emos wiki. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} emos wiki.`,
     },
     prism: {
       theme: prismThemes.github,
