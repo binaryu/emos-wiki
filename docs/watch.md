@@ -40,3 +40,7 @@ slug: /watch
 
 - 具体规范与开发文档可参考 [官方 Wiki ](https://wiki.emos.best/api/watch.html)。
 - 设置好接口后，将你的动态片单接口地址填入面板对应设置即可生效。
+
+## 工具推荐
+
+ https://cover.emos.dpdns.org 可以用来生成片单封面

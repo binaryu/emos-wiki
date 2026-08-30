@@ -9,6 +9,7 @@ slug: /
 
 
 欢迎大家通过 [GitHub Issue / PR](https://github.com/binaryu/emos-wiki) 提交补充或纠错！
+不熟悉Github的小伙伴,也可以直接在群里提出建议
 
 
 ---
