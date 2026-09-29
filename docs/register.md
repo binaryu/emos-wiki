@@ -18,7 +18,11 @@ slug: /register
 1. 打开注册入口：[account.somebyte.org](https://account.somebyte.org)
 2. 填写信息完成注册。
 
-:::tip[邮箱选择建议]
+:::tip
+### 用户名相关 
+用户名最好不要带上qq号, 手机号之类的敏感信息, 且用户名不支持修改。
+
+### 邮箱相关
 推荐使用 **Gmail**、**Outlook** 等国际大厂主流邮箱。如未收到验证码，请在**垃圾邮件箱**中查找。
 :::
 
