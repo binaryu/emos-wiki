@@ -1,0 +1,30 @@
+media:
+  input: static/img
+  output: /img
+
+content:
+  - name: docs
+    label: 文档
+    type: collection
+    path: docs
+    filename: "{slug}.md"
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: sidebar_label
+        label: 侧边栏显示名称
+        type: string
+      - name: sidebar_position
+        label: 侧边栏排序
+        type: number
+      - name: slug
+        label: 自定义路由 (Slug)
+        type: string
+      - name: description
+        label: 页面描述
+        type: string
+      - name: body
+        label: 正文内容
+        type: rich-text
