@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://auth.emos.dpdns.org
   auth_endpoint: auth
+  open_authoring: true
 
 publish_mode: editorial_workflow
 
