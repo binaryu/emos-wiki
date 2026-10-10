@@ -33,7 +33,10 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/binaryu/emos-wiki/tree/main/',
+          editUrl: ({ docPath }) => {
+            const entrySlug = docPath.replace(/\.(md|mdx)$/, '');
+            return `https://emos.dpdns.org/admin/#/collections/docs/entries/${entrySlug}`;
+          },
         },
         blog: false, 
         theme: {
