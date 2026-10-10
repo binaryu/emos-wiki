@@ -8,6 +8,8 @@ backend:
 
 publish_mode: editorial_workflow
 
+output:
+  omit_empty_optional_fields: true
 media_folder: "static/img"
 public_folder: "/img"
 
@@ -23,6 +25,6 @@ collections:
       - { label: "标题", name: "title", widget: "string", required: true }
       - { label: "侧边栏显示名称", name: "sidebar_label", widget: "string", required: false }
       - { label: "侧边栏排序", name: "sidebar_position", widget: "number", value_type: "int", required: false }
-      - { label: "自定义路由 (Slug)", name: "slug", widget: "string", required: false, pattern: ['^(/[a-zA-Z0-9\-_]+)?$', '必须以 / 开头，例如 /carrot，或留空'] }
+      - { label: "自定义路由 (Slug)", name: "slug", widget: "string", required: false, pattern: ['^($|/[a-zA-Z0-9\-_\/]*)$', '必须以 / 开头（例如 / 或 /carrot），或者留空'] }
       - { label: "页面描述", name: "description", widget: "string", required: false }
       - { label: "正文内容", name: "body", widget: "markdown" }
