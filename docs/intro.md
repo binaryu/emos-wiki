@@ -2,8 +2,7 @@
 title: emos 指南
 sidebar_label: 指南概览
 sidebar_position: 1
-slug: ''
-description: ''
+slug: /
 ---
 
 欢迎来到 **emos wiki ²**！整理 emos 的各种功能与操作指南，补充 [官方 Wiki](https://wiki.emos.best/) 缺少细节。
