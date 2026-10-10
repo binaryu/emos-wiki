@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: binaryu/emos-wiki
+  branch: main
+  base_url: https://auth.emos.dpdns.org
+  auth_endpoint: auth
+
+# 媒体文件（图片）存储与公共访问路径
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "docs"
+    label: "文档"
+    folder: "docs"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "侧边栏显示名称", name: "sidebar_label", widget: "string", required: false }
+      - { label: "侧边栏排序", name: "sidebar_position", widget: "number", required: false }
+      - { label: "自定义路由 (Slug)", name: "slug", widget: "string", required: false }
+      - { label: "页面描述", name: "description", widget: "string", required: false }
+      - { label: "正文内容", name: "body", widget: "markdown" }
