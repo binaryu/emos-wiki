@@ -16,6 +16,8 @@ Worker 名称 `cfwiki`，D1 绑定名称 `DB`。执行 `schema.sql` 创建表。
 
 登录通过 `https://emos.best/link` 完成。后端使用 `/api/user/base` 验证回调凭证，忽略回调传入的用户ID；原始用户凭证不持久化。考试会话保存在 D1，通过 HttpOnly Cookie 使用。
 
+实测 EMOS 的 Cloudflare 防护目前会拒绝此 Worker 的 API 请求（HTTP 403），相同凭证在本机请求正常。在官方放行或提供允许调用的官方 API 地址前，线上登录及自动发奖链路不可用。登录失败会返回考试首页，显示具体原因；不会信任未经验证的回调用户ID来绕过验证。
+
 发奖通过服务商 `POST /api/pay/transfer`，使用已验证为「lsp娱乐」的凭证。API 文档标注手续费千分之六，以实际扣款为准。
 
 ## 转账异常

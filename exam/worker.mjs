@@ -6,10 +6,12 @@ const headers = {'Cache-Control':'no-store','Referrer-Policy':'no-referrer','X-C
 const json = (data,status=200) => Response.json(data,{status,headers});
 const cookie = (name,value,age) => `${name}=${value}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${age}`;
 const cookies = req => Object.fromEntries((req.headers.get('Cookie') || '').split(';').map(p=>p.trim().split('=')));
+const loginFailure = code => new Response(null,{status:302,headers:{...headers,Location:'/?login_error='+code,'Set-Cookie':cookie('exam_login','',0)}});
 
 async function emos(path,token) {
   const response = await fetch(API+path,{headers:{Authorization:`Bearer ${token}`,Accept:'application/json'},signal:AbortSignal.timeout(20000)});
   if (!response.ok) throw new Error(`EMOS 接口返回 ${response.status}`);
+  if(!response.headers.get('Content-Type')?.includes('application/json')) throw new Error('EMOS 接口未返回 JSON 数据');
   return response.json();
 }
 
@@ -30,11 +32,11 @@ async function handle(req,env) {
   }
   if(req.method==='GET' && url.pathname.startsWith('/callback/')) {
     const state = url.pathname.slice('/callback/'.length);
-    if(!state || cookies(req).exam_login!==state) return json({error:'登录验证已失效，请重新登录。'},400);
+    if(!state || cookies(req).exam_login!==state) return loginFailure('expired');
     const token = url.searchParams.get('token');
-    if(!token || token.length>2000) return json({error:'授权回调缺少有效凭证。'},400);
+    if(!token || token.length>2000) return loginFailure('invalid');
     const user = await emos('/api/user/base',token);
-    if(typeof user.user_id!=='string' || typeof user.username!=='string') return json({error:'EMOS 用户信息格式不正确。'},502);
+    if(typeof user.user_id!=='string' || typeof user.username!=='string') return loginFailure('invalid');
     const id = crypto.randomUUID();
     await env.DB.batch([
       env.DB.prepare('DELETE FROM sessions WHERE expires_at<?').bind(Date.now()),
@@ -103,6 +105,10 @@ async function handle(req,env) {
 export default {
   async fetch(req,env) {
     try { return await handle(req,env); }
-    catch { return json({error:'请求处理失败，请稍后重试。'},502); }
+    catch(error) {
+      if(new URL(req.url).pathname.startsWith('/callback/')) return loginFailure(error.message==='EMOS 接口返回 403'?'blocked':'failed');
+      const detail=error.message.startsWith('EMOS ') ? error.message : error.name;
+      return json({error:'请求处理失败：'+detail+'。请稍后重试。'},502);
+    }
   },
 };

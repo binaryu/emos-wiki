@@ -28,6 +28,9 @@
 <script>
 const el = id => document.getElementById(id);
 let questions=[];
+const loginErrors={expired:'登录验证已失效，请从下面重新登录。',invalid:'授权信息无效，请重新登录。',blocked:'暂时无法登录：EMOS 的 Cloudflare 防护拦截了考试后端的账号验证请求。需要管理员放行或配置可用的官方 API 地址后才能继续。',failed:'账号验证或会话保存失败，请稍后从下面重新登录。'};
+const loginError=loginErrors[new URLSearchParams(location.search).get('login_error')];
+if(loginError)history.replaceState(null,'','/');
 async function request(path,options){const response=await fetch(path,options);const data=await response.json();if(!response.ok)throw new Error(data.error || '请求失败，请稍后重试。');return data;}
 function displayProgress(data){el('highest').textContent='历史最高：'+data.highest_score+' 分';el('paid').textContent='已发奖励：'+data.reward_paid+' 萝卜';}
 function render(){
@@ -53,7 +56,7 @@ el('exam').addEventListener('submit',async event=>{
   }catch(error){el('status').textContent=error.message;}finally{el('submit').disabled=false;}
 });
 el('retry').addEventListener('click',()=>{el('result').hidden=true;el('exam').hidden=false;el('questions').scrollIntoView({behavior:'smooth',block:'start'});});
-(async()=>{try{const [list,data]=await Promise.all([request('/api/questions'),request('/api/me')]);questions=list;render();el('status').textContent='';if(data.user){el('account').hidden=false;el('username').textContent=data.user.username;el('uid').textContent=data.user.user_id;displayProgress(data);if(data.payout_state!=='idle')el('status').textContent='账号有一笔奖励待处理，请联系管理员核对到账。';else el('exam').hidden=false;}else el('login').hidden=false;}catch(error){el('status').textContent=error.message;}})();
+(async()=>{try{const [list,data]=await Promise.all([request('/api/questions'),request('/api/me')]);questions=list;render();el('status').textContent=loginError || '';if(data.user){el('account').hidden=false;el('username').textContent=data.user.username;el('uid').textContent=data.user.user_id;displayProgress(data);if(data.payout_state!=='idle')el('status').textContent='账号有一笔奖励待处理，请联系管理员核对到账。';else el('exam').hidden=false;}else el('login').hidden=false;}catch(error){el('status').textContent=error.message;}})();
 </script>
 </body>
 </html>
