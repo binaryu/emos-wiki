@@ -21,4 +21,4 @@ slug: /
 - 📑 [片单相关](/watch) —— 片单创建、排序与动态片单介绍。
 - 🌐 [网站导航](/links) —— 官方站点、社区服务与机器人汇总。
 - 💡 [常见问题](/others) —— 头像上传等常见补充技巧。
-- 📝 [入门考核](https://cfwiki.cbzj.workers.dev/) —— 线上考试入口。
+- 📝 [入门考核](https://cfwiki.cbzj.workers.dev/) —— 宗门培训考核。
