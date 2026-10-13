@@ -5,6 +5,7 @@ backend:
   base_url: https://auth.emos.dpdns.org
   auth_endpoint: auth
   open_authoring: true
+  auth_scope: public_repo
 
 publish_mode: editorial_workflow
 
