@@ -9,7 +9,7 @@ slug: /carrot
 
 ## 新人入门考核
 
-[点击进入考试 →](https://cfwiki.cbzj.workers.dev/)
+[点击进入考试 →](https://exam.zzzj.de5.net/)
 
 20 道基础题，允许查阅 Wiki 和无限次重考。60 分及格，最高奖励为50萝卜 ，按历史最高档补发差额，同档重考不重复奖励；奖励由「lsp娱乐」提供。
 
