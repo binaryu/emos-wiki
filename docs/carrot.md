@@ -7,15 +7,14 @@ slug: /carrot
 
 # 🥕 萝卜
 
-## 
+## 新人入门考核
 
-:::info[来源同步]
-本页内容同步自 [emos 官方 Wiki](https://wiki.emos.best/introduction/carrot.html)。
-:::
+[点击进入考试 →](https://cfwiki.cbzj.workers.dev/)
 
-***
+20 道基础题，允许查阅 Wiki 和无限次重考。60 分及格，最高奖励为50萝卜 ，按历史最高档补发差额，同档重考不重复奖励；奖励由「lsp娱乐」提供。
 
-## 获取途径
+
+## 萝卜获取
 
 ```txt
 以下内容 请以实际到账为准
