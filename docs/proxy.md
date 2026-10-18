@@ -5,7 +5,7 @@ sidebar_position: 8
 slug: /proxy
 ---
 
-# 🛰️ 反代
+#  反代相关
 
 **反代（反向代理）** 用一台机器（别人的服务器，或者 Cloudflare Worker）替你去请求 emos。对使用者来说它只是多一条线路，对搭建者来说服内是**欢迎反代**的，~~后续也许还能赚点萝卜~~。
 
@@ -39,7 +39,7 @@ slug: /proxy
 
 ---
 
-## 自己搭一个
+## 自己搭建
 
 有 VPS 用 **Meridian**，只有 Cloudflare 域名用 **CF-EMBY-PROXY-UI**。两者要做的事一样：路径 `/emby`、两枚 EMOS 头、保住真实 IP、支持 206。只想弄懂原理就展开最后三个手写配置。
 
@@ -78,7 +78,7 @@ docker run -d --name meridian --restart unless-stopped --network host \
 
 1. 建一个 KV 和一个 D1，绑定为 `ENI_KV` / `DB`；加两个 Secret：`ADMIN_PASS`、`JWT_SECRET`
 2. 粘贴 `worker.js` 部署（`ADMIN_PATH` 默认 `/admin`，改掉更安全）
-3. 后台加节点：地址 `http://源站:8096`，「自定义请求头」里填两枚 `EMOS-*` 头
+3. 后台加节点：地址 `http://源站:8096`，「自定义请求头」里填两个 `EMOS-*` 请求头
 
 `X-Forwarded-For` 默认注入，节点里写同名头也覆盖不掉。免费版请求数偏紧，能直连的节点选「直连」省额度。
 
@@ -156,7 +156,7 @@ export default {
 };
 ```
 
-只适合轻量用：免费版请求数吃紧，正经跑还是用上面两个项目。
+只适合轻量使用, 配合优选ip效果可能不错。
 
 </details>
 
@@ -164,7 +164,8 @@ export default {
 
 ## 搭完先自测
 
-### 1. 请求头有没有传对
+<details>
+<summary><b>1. 请求头有没有传对</b></summary>
 
 访问 `<你的地址>/emby/system/ext/proxy/test`，例如 `https://proxy.example.com/emby/system/ext/proxy/test`：
 
@@ -183,7 +184,10 @@ export default {
 
 `proxy_id` / `proxy_name` 还是 `null`，说明头没生效（拼写、大小写、被 `add_header` 挡住了、或者反代到了错误的路径）。
 
-### 2. 支不支持 206
+</details>
+
+<details>
+<summary><b>2. 支不支持 206</b></summary>
 
 ```bash
 curl -i -L -H "Range: bytes=0-1" "https://proxy.example.com/emby/System/Ext/Proxy/TestVideo"
@@ -198,11 +202,17 @@ content-range: bytes 0-1/84890474
 
 如果是 `200` + 整段返回，说明某处缓冲/改写了响应，播放器会拖不动进度条。
 
-### 3. 播放后看请求数
+</details>
+
+<details>
+<summary><b>3. 播放后看请求数</b></summary>
 
 随便播一部片，然后用 bot 查询自己的请求数。**请求数暴涨**基本等于反代在漏请求（图片没缓存、Progress 没节流、或者客户端在反复重试）。
 
-### 4. 测速文件
+</details>
+
+<details>
+<summary><b>4. 测速文件</b></summary>
 
 ```text
 https://files.emosstore.cfd/files/speedtest/johann-mouse.mp4
@@ -211,6 +221,8 @@ https://files.emosstore.cfd/files/speedtest/100mb.bin
 拿这两个文件对比「直连 / 你的反代」的下行速度，比凭感觉可靠。
 也可以内置到你的反代里面,用来测直观的测速。
 
+</details>
+
 ---
 
 ## 在客户端里用反代
@@ -218,6 +230,8 @@ https://files.emosstore.cfd/files/speedtest/100mb.bin
 1. 拿到反代地址（自带 `/emby` 路径的直接用，不要自己再补一层）。
 2. Emby 客户端 → 添加服务器 → 填域名、端口、账号密码。
 3. 播放器里可以存多个服务器地址，卡了就在设置里切一个。
+4. 标注了特殊端口的（例如 `:44443`）记得把端口一起填进客户端。
+5. 标注了路径的 (例如 `/emos`) 记得填写到路径里面。
 
 服务端已支持 `emby_ext_domains`：在支持的播放器里可以直接随时切换地址，不用重新登录。
 
@@ -225,7 +239,7 @@ https://files.emosstore.cfd/files/speedtest/100mb.bin
 
 ## 现成的反代地址
 
-官方页面里维护了一份动态列表（名称 / 备注 / 地址 / 添加时间），并且一直在更新：
+官方页面里维护了一份动态列表( 名称 / 备注 / 地址 / 添加时间 )：
 
 👉 [wiki.emos.best/proxy.html](https://wiki.emos.best/proxy.html)
 
@@ -233,8 +247,8 @@ https://files.emosstore.cfd/files/speedtest/100mb.bin
 
 - 优先选**和你同运营商**的（电信选「电信优选」、移动选「移动快乐路」这类）。
 - 备注里写了「不定时更新」「看脸」的，属于自用机，随时可能挂，当备份线路即可。
-- 标注了特殊端口的（例如 `:44443`）记得把端口一起填进客户端。
-- 先用上面的测速文件和自己的常用时段试一下，别看名字挑。
+- 备注里写了 `支持聚合` 的 可以正常支持EplayerX、 Rex、 Capy 等播放器的聚合。
+
 
 ---
 
@@ -243,6 +257,7 @@ https://files.emosstore.cfd/files/speedtest/100mb.bin
 | 现象 | 大概率原因 |
 | --- | --- |
 | 测试接口 404 / 404 Not Found | 路径不是 `/emby`，或反代只配了根路径没配子路径 |
+| 返回403 | ip被拦截,或未正确配置上述请求头 |
 | `proxy_id` 为 null | `EMOS-PROXY-ID` 拼错 / 没加 / 被上游当成非法头丢弃 |
 | 能进库但播放转圈 | 分流域名没代理，或没关 `proxy_buffering` |
 | 拖进度条失败、从头播 | 响应被改成 200，或中间层吞了 `Range` |
