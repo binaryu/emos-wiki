@@ -1,11 +1,11 @@
 ---
 title: 网站导航
-description: 
+description: ''
 published: true
-date: 2026-11-20T03:29:04.753Z
-tags: 
+date: '2026-11-20T08:12:10.057Z'
+tags: []
 editor: markdown
-dateCreated: 2026-11-20T03:06:33.859Z
+dateCreated: '2026-11-20T03:06:33.859Z'
 ---
 
 整理 emos 社区相关的官方站点、 Telegram 相关，方便快速查找。
@@ -26,6 +26,9 @@ dateCreated: 2026-11-20T03:06:33.859Z
 | **TODB** | [theotherdb.org](https://theotherdb.org) | 影视、音乐、图书、游戏全品类资料库 |
 | **TODB PlayBack** | [playback.theotherdb.org](https://playback.theotherdb.org) | TODB 媒体资料库(片头片尾缩略图) |
 | **medb** | [medb.lat](https://medb.lat) | 媒体库数据统计工具 |
+| **悄悄话** | [whisper.emos.best](https://whisper.emos.best/)| 有什么悄悄话想说吗 |
+|**音乐服**|[music.emos.best](https://music.emos.best/)|音乐服堂堂上线|
+|**有声书服**|[abs.emos.best](https://abs.emos.best/)|听书服堂堂上线|
 
 ## 社区网站
 
@@ -50,3 +53,4 @@ dateCreated: 2026-11-20T03:06:33.859Z
 | **emos bot** | [@emospg_bot](https://t.me/emospg_bot) | emos 官方机器人 |
 | **Amiya** | [@Amiyawwwbot](https://t.me/Amiyawwwbot) | 特色功能:trakt追剧通知 |
 | **e魔盒** | [@emosMagicBox_bot](https://t.me/emosMagicBox_bot) | emos 百宝箱 |
+
