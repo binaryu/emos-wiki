@@ -1,0 +1,53 @@
+---
+title: 注册指南
+description: 
+published: true
+date: 2026-11-20T03:28:16.528Z
+tags: 
+editor: markdown
+dateCreated: 2026-11-20T03:10:42.064Z
+---
+
+按照以下步骤即可完成账号注册并绑定进入 Telegram 官方群组。
+
+---
+
+### 1. 注册 somebyte 账号
+
+> **somebyte** 是 emos 宇宙的统一账号管理系统。
+
+1. 打开注册入口：[account.somebyte.org](https://account.somebyte.org)
+2. 填写信息完成注册。
+
+> **用户名相关**
+> 用户名最好不要带上qq号, 手机号之类的敏感信息, 且用户名不支持修改。
+>
+> **邮箱相关**
+> 推荐使用 **Gmail**、**Outlook** 等国际大厂主流邮箱。如未收到验证码，请在**垃圾邮件箱**中查找。
+{.is-success}
+
+---
+
+### 2. 登录 emos 账号并获取 UID
+
+1. 打开 [emos.best](https://emos.best)，使用刚刚注册的 somebyte 账号完成授权登录。
+2. 登录面板后，点击左上角「欢迎」，即可查看当前用户的**唯一 ID**（以 `e` 开头，以 `s` 结尾）。
+
+> **邀请机制**
+>
+> 获取到你的专属 ID 后，即可发给你的小伙伴，让他邀请你。
+{.is-info}
+
+![面板与ID展示](/img/register1.png)
+
+---
+
+### 3. 加入 Telegram 官方群聊
+
+进入群聊需要先绑定你的 emos 账号：
+
+- **方式 A（网页绑定）**：在面板页面直接点击 Telegram 绑定链接，即可自动跳转至 Bot 授权, 随后申请入[群](https://t.me/emospg),bot会自动通过
+- **方式 B（Bot 邀请）**：让已有权限的小伙伴通过 [@emospg_bot](https://t.me/emospg_bot) 发送指令 `/invite` 生成入群专属链接。
+- 通过方式 B 入群的, 推荐也绑定 emos 账号, 以便参与抢红包等活动
+
+![TG绑定示意](/img/register2.png)
